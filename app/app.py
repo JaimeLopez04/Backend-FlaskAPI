@@ -9,7 +9,9 @@ app.register_blueprint(songs_routes)
 
 @app.route('/')
 def index():
-    return config.urlBase
+    return "¡Hola, mundo!"
 
-if __name__=="__main__":
-    app.run(debug=False)
+# Comprobar si el archivo se está ejecutando directamente y no importado como un módulo
+if __name__ == "__main__":
+    # Ejecutar la aplicación Flask
+    app.run(host='0.0.0.0', port=5173)
