@@ -119,7 +119,7 @@ def favorite(email):
         song.favorite = True
     song.save()
 
-    return jsonify({"SongFavorite" : "Successfull"})
+    return jsonify({"IsFavorite" : song.favorite})
 
 def searchGender(email):
     songData = {
