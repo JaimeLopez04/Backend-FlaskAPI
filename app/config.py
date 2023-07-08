@@ -23,12 +23,15 @@ container_client_images_user = blob_service_client.get_container_client(CONTAINE
 
 
 # Conexion a la base de datos en MONGO
-app.config['MONGO_URI']='mongodb://localhost:27017/BeatLab'
+app.config['MONGO_URI'] = 'mongodb://mongo:cyzxqqPPi8TYVgfjA4eE@containers-us-west-198.railway.app:5797'
 mongo = PyMongo(app)
-db = mongo.db.users
-dbSongs = mongo.db.songs
-db.create_index('email', unique=True)
-mongoengine.connect('BeatLab', host='localhost', port=27017)
+# db = mongo.db.users
+# dbSongs = mongo.db.songs
+mongoengine.connect(
+    db='BeatLab',
+    host='mongodb://mongo:cyzxqqPPi8TYVgfjA4eE@containers-us-west-198.railway.app:5797'
+)
+
 
 
 # Configuracion para enviar el correo de recuperacion
