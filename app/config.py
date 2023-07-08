@@ -15,9 +15,8 @@ CONTAINER_NAME_SONG = "songs"
 CONTAINER_NAME_IMAGES_SONG = "imagesong"
 CONTAINER_NAME_IMAGES_USER = "imageuser"
 
-# Conexion con el blob
+
 blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
-# Conexion con los contenedores
 container_client_song = blob_service_client.get_container_client(CONTAINER_NAME_SONG)
 container_client_images_song = blob_service_client.get_container_client(CONTAINER_NAME_IMAGES_SONG)
 container_client_images_user = blob_service_client.get_container_client(CONTAINER_NAME_IMAGES_USER)
@@ -48,4 +47,7 @@ MAIL_DEFAULT_SENDER = 'miguelangelpazvelasco1@gmail.com'
 
 urlBase = "http://localhost:5173/"
 
-CORS(app, methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], supports_credentials=True, origins="*", allow_headers=["Content-Type"])
+
+CORS(app, methods=['GET', 'POST', 'PUT', 'DELETE'], supports_credentials=True, origins="*", allow_headers=["Content-Type"])
+
+
