@@ -3,7 +3,7 @@ from flask import jsonify, redirect, request, url_for
 from flask_mail import Mail, Message
 from azure.storage.blob import  BlobSasPermissions, generate_blob_sas
 from flask import session
-from config import db, app
+from config import  app
 from authentication.api_v1_0.userModel import Users
 from config import blob_service_client, container_client_images_user, CONTAINER_NAME_IMAGES_USER
 import secrets
