@@ -10,7 +10,7 @@ import mongoengine
 app = Flask(__name__)
 
 # Conexion al servidor de las canciones en Microsoft BLOB storage
-CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=beatlab;AccountKey=wxtVr/zpbjPkihy/ysj528e4Af7eN5lpDvhNbBhmJyuG9kjzLlitGmlH/Mn9pkvGSMmpNchi/ygV+AStI1V2AQ==;EndpointSuffix=core.windows.net"
+CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=beatlabsql;AccountKey=JpYdCBjz//Uh4hTMEUjy8oIw3/MgyJWa+bhBt1quQtKDVKJpFw98AgUMuOT7xQbKj6o9zrO+Iqbw+AStlum3Qg==;EndpointSuffix=core.windows.net"
 CONTAINER_NAME_SONG = "songs"
 CONTAINER_NAME_IMAGES_SONG = "imagesong"
 CONTAINER_NAME_IMAGES_USER = "imageuser"
@@ -23,13 +23,13 @@ container_client_images_user = blob_service_client.get_container_client(CONTAINE
 
 
 # Conexion a la base de datos en MONGO
-app.config['MONGO_URI'] = 'mongodb://mongo:cyzxqqPPi8TYVgfjA4eE@containers-us-west-198.railway.app:5797'
+app.config['MONGO_URI'] = 'mongodb://localhost:27017'
 mongo = PyMongo(app)
 # db = mongo.db.users
 # dbSongs = mongo.db.songs
 mongoengine.connect(
     db='BeatLab',
-    host='mongodb://mongo:cyzxqqPPi8TYVgfjA4eE@containers-us-west-198.railway.app:5797'
+    host='mongodb://localhost:27017'
 )
 
 
