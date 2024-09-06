@@ -1,5 +1,5 @@
 Flask
-pymongo==4.4.0
+pymongo==4.6.3
 Flask_pymongo==2.3.0
 Flask_cors==5.0.0
 Flask_cloudy==1.1.0
